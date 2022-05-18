@@ -1,0 +1,39 @@
+{
+  "name": "@titanom/eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint configuration of Titanom Technologies GmbH",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titanom/eslint-config.git"
+  },
+  "author": "Jannis Morgenstern <jannis.n.morgenstern@gmail.com> (https://github.com/Jannis-Morgenstern)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/titanom/eslint-config/issues"
+  },
+  "homepage": "https://github.com/titanom/eslint-config#readme",
+  "type": "commonjs",
+  "scripts": {
+    "format": "prettier --write .",
+    "preinstall": "pnpm dlx only-allow pnpm"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./strict": "./index.strict.js",
+    "./node": "./src/node/node.js",
+    "./node/strict": "./src/node/strict/node.strict.js",
+    "./react": "./src/react/react.js",
+    "./react/strict": "./src/react/strict/react.strict.js",
+    "./typescript": "./src/typescript/typescript.js",
+    "./typescript/strict": "./src/typescript/strict/typescript.strict.js"
+  },
+  "devDependencies": {
+    "@titanom/prettier-config": "^1.0.0",
+    "prettier": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  }
+}
