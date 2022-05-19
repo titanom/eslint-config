@@ -1,1 +1,1 @@
-module.exports = require('./src/built-in.strict');
+module.exports = require('./src/javascript.strict');

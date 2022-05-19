@@ -32,6 +32,17 @@
     "@titanom/prettier-config": "^1.0.0",
     "prettier": "^2.6.2"
   },
+  "dependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/eslint-parser": "^7.17.0",
+    "confusing-browser-globals": "^1.0.11",
+    "eslint-plugin-pii": "^1.0.2",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "eslint-plugin-unicorn": "^42.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.x.x"
+  },
   "engines": {
     "node": ">=16",
     "pnpm": ">=7"
