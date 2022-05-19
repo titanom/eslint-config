@@ -2,7 +2,7 @@ const confusingBrowserGlobals = require('confusing-browser-globals');
 const { ERROR, WARN, OFF } = require('./constants');
 
 const unicorn = {
-  plugins: [],
+  plugins: ['unicorn'],
 };
 
 const sonarjs = {
@@ -42,12 +42,8 @@ const sonarjs = {
   },
 };
 
-const pii = {
-  plugins: [],
-};
-
 module.exports = {
-  plugins: [...unicorn.plugins, ...sonarjs.plugins, ...pii.plugins],
+  plugins: [...unicorn.plugins, ...sonarjs.plugins],
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
