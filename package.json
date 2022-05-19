@@ -38,16 +38,23 @@
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "confusing-browser-globals": "^1.0.11",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-pii": "^1.0.2",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-sonarjs": "^0.13.0",
     "eslint-plugin-unicorn": "^42.0.0"
   },
   "peerDependencies": {
     "eslint": "^8.x.x",
-    "typescript": "^4.x.x"
+    "typescript": "^4.x.x",
+    "react": "^18.x.x"
   },
   "peerDependenciesMeta": {
     "typescript": {
+      "optional": true
+    },
+    "react": {
       "optional": true
     }
   },
