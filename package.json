@@ -14,8 +14,7 @@
   "homepage": "https://github.com/titanom/eslint-config#readme",
   "type": "commonjs",
   "scripts": {
-    "format": "prettier --write .",
-    "preinstall": "pnpm dlx only-allow pnpm"
+    "format": "prettier --write ."
   },
   "main": "index.js",
   "exports": {
