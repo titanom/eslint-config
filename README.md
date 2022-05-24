@@ -1,6 +1,6 @@
 # @titanom/eslint-config
 
-[ESLint](https://eslint.org/) Configuration of [Titanom Technologies GmbH](https://titanom.com/)
+Default [ESLint](https://eslint.org/) config for projects at [Titanom Technologies](https://titanom.com/)
 
 ## Installation
 
@@ -37,4 +37,4 @@ module.exports = {
 ```
 
 > If you prefer to use the `strict` ruleset, append the extension with `/strict`.  
-> E.g.: `@titanom/eslint-config/typescript/strict` 
+> E.g.: `@titanom/eslint-config/typescript/strict`

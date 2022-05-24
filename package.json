@@ -1,7 +1,7 @@
 {
   "name": "@titanom/eslint-config",
   "version": "1.0.0",
-  "description": "ESLint configuration of Titanom Technologies GmbH",
+  "description": "Default ESLint config for projects at Titanom Technologies",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/titanom/eslint-config.git"
