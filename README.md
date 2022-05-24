@@ -37,4 +37,5 @@ module.exports = {
 ```
 
 > If you prefer to use the `strict` ruleset, append the extension with `/strict`.  
-> E.g.: `@titanom/eslint-config/typescript/strict`
+> E.g.: `@titanom/eslint-config/typescript/strict`  
+> **strict rules extend their base but do not add any additional checks until version 1.0!**
