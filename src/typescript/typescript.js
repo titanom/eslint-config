@@ -76,7 +76,7 @@ module.exports = {
         '@typescript-eslint/consistent-type-imports': [WARN, { prefer: 'type-imports' }],
         '@typescript-eslint/explicit-function-return-type': OFF,
         '@typescript-eslint/explicit-member-accessibility': WARN,
-        '@typescript-eslint/explicit-module-boundary-types': ERROR,
+        '@typescript-eslint/explicit-module-boundary-types': OFF,
         '@typescript-eslint/member-delimiter-style': OFF,
         '@typescript-eslint/member-ordering': OFF,
         '@typescript-eslint/method-signature-style': OFF,
