@@ -97,9 +97,9 @@ module.exports = {
         'react/forbid-dom-props': [ERROR, { forbid: ['dangerouslySetInnerHTML'] }],
         'react/forbid-elements': [ERROR, { forbid: FORBIDDEN_ELEMENTS }],
         'react/function-component-definition': [
-          ERROR,
+          WARN,
           {
-            namedComponents: 'arrow-function',
+            namedComponents: 'function-declaration',
             unnamedComponents: 'arrow-function',
           },
         ],
