@@ -68,7 +68,7 @@ module.exports = {
             objectLiteralTypeAssertions: 'allow-as-parameter',
           },
         ],
-        '@typescript-eslint/consistent-type-definitions': [WARN, 'interface'],
+        '@typescript-eslint/consistent-type-definitions': [ERROR, 'type'],
         '@typescript-eslint/consistent-type-exports': [
           WARN,
           { fixMixedExportsWithInlineTypeSpecifier: false },
