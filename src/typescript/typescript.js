@@ -68,7 +68,7 @@ module.exports = {
             objectLiteralTypeAssertions: 'allow-as-parameter',
           },
         ],
-        '@typescript-eslint/consistent-type-definitions': [WARN, 'interface'],
+        '@typescript-eslint/consistent-type-definitions': [ERROR, 'type'],
         '@typescript-eslint/consistent-type-exports': [
           WARN,
           { fixMixedExportsWithInlineTypeSpecifier: false },
@@ -202,7 +202,7 @@ module.exports = {
         '@typescript-eslint/no-loop-func': ERROR,
         '@typescript-eslint/no-loss-of-precision': ERROR,
         '@typescript-eslint/no-magic-numbers': OFF,
-        '@typescript-eslint/no-redeclare': ERROR,
+        '@typescript-eslint/no-redeclare': OFF,
         '@typescript-eslint/no-shadow': WARN,
         '@typescript-eslint/no-throw-literal': ERROR,
         '@typescript-eslint/no-unused-expressions': [
