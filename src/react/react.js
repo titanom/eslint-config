@@ -97,9 +97,9 @@ module.exports = {
         'react/forbid-dom-props': [ERROR, { forbid: ['dangerouslySetInnerHTML'] }],
         'react/forbid-elements': [ERROR, { forbid: FORBIDDEN_ELEMENTS }],
         'react/function-component-definition': [
-          ERROR,
+          WARN,
           {
-            namedComponents: 'arrow-function',
+            namedComponents: 'function-declaration',
             unnamedComponents: 'arrow-function',
           },
         ],
@@ -156,7 +156,7 @@ module.exports = {
         'react/jsx-key': ERROR,
         'react/jsx-max-depth': OFF,
         'react/jsx-max-props-per-line': [ERROR, { maximum: 15, when: 'always' }],
-        'react/jsx-newline': [WARN, { prevent: true }],
+        'react/jsx-newline': OFF,
         'react/jsx-no-bind': OFF,
         'react/jsx-no-comment-textnodes': ERROR,
         'react/jsx-no-constructed-context-values': ERROR,
