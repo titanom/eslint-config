@@ -143,13 +143,8 @@ module.exports = {
         'react/jsx-first-prop-new-line': [WARN, 'multiline'],
         'react/jsx-fragments': [ERROR, 'element'],
         'react/jsx-handler-names': [
-          ERROR,
-          {
-            eventHandlerPrefix: 'handle|on',
-            eventHandlerPropPrefix: 'on',
-            checkLocalVariables: true,
-            checkInlineFunction: false,
-          },
+          OFF,
+          
         ],
         'react/jsx-indent': [WARN, 2, { checkAttributes: true, indentLogicalExpressions: true }],
         'react/jsx-indent-props': [WARN, 2],
@@ -165,7 +160,7 @@ module.exports = {
         'react/jsx-no-script-url': ERROR,
         'react/jsx-no-target-blank': ERROR,
         'react/jsx-no-undef': ERROR,
-        'react/jsx-no-useless-fragment': ERROR,
+        'react/jsx-no-useless-fragment': [ERROR, {allowExpressions: true}],
         'react/jsx-one-expression-per-line': OFF,
         'react/jsx-pascal-case': ERROR,
         'react/jsx-props-no-multi-spaces': WARN,
