@@ -215,7 +215,7 @@ module.exports = {
           },
         ],
         '@typescript-eslint/no-unused-vars': ERROR,
-        '@typescript-eslint/no-use-before-define': ERROR,
+        '@typescript-eslint/no-use-before-define': OFF,
         '@typescript-eslint/no-useless-constructor': ERROR,
         '@typescript-eslint/object-curly-spacing': OFF,
         '@typescript-eslint/padding-line-between-statements': OFF,
