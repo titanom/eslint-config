@@ -115,7 +115,7 @@ module.exports = {
         'react/no-deprecated': ERROR,
         'react/no-find-dom-node': ERROR,
         'react/no-invalid-html-attribute': ERROR,
-        'react/no-multi-comp': ERROR,
+        'react/no-multi-comp': OFF,
         'react/no-namespace': ERROR,
         'react/no-render-return-value': ERROR,
         'react/no-string-refs': ERROR,
