@@ -132,13 +132,9 @@ module.exports = {
 
         // JSX
         'react/jsx-boolean-value': [WARN, 'never'],
-        'react/jsx-child-element-spacing': WARN,
         'react/jsx-closing-bracket-location': WARN,
         'react/jsx-closing-tag-location': WARN,
         'react/jsx-curly-brace-presence': ERROR,
-        'react/jsx-curly-newline': [WARN, 'consistent'],
-        'react/jsx-curly-spacing': [WARN, { when: 'never' }],
-        'react/jsx-equals-spacing': [WARN, 'never'],
         'react/jsx-filename-extension': [ERROR, { extensions: ['.jsx', '.tsx'] }],
         'react/jsx-first-prop-new-line': [WARN, 'multiline'],
         'react/jsx-fragments': [ERROR, 'element'],
@@ -148,7 +144,6 @@ module.exports = {
         'react/jsx-key': ERROR,
         'react/jsx-max-depth': OFF,
         'react/jsx-max-props-per-line': [ERROR, { maximum: 15, when: 'always' }],
-        'react/jsx-newline': OFF,
         'react/jsx-no-bind': OFF,
         'react/jsx-no-comment-textnodes': ERROR,
         'react/jsx-no-constructed-context-values': ERROR,
@@ -164,15 +159,6 @@ module.exports = {
         'react/jsx-props-no-spreading': OFF,
         'react/jsx-sort-default-props': OFF,
         'react/jsx-sort-props': OFF,
-        'react/jsx-tag-spacing': [
-          WARN,
-          {
-            closingSlash: 'never',
-            beforeSelfClosing: 'always',
-            afterOpening: 'never',
-            beforeClosing: 'never',
-          },
-        ],
         'react/jsx-uses-react': OFF,
         'react/jsx-uses-vars': ERROR,
         'react/jsx-wrap-multilines': [
