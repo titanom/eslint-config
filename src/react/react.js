@@ -50,6 +50,9 @@ module.exports = {
           jsx: true,
         },
       },
+      globals: {
+        JSX: 'readonly',
+      },
       settings: {
         react: {
           pragma: 'React',
