@@ -34,8 +34,8 @@
   "dependencies": {
     "@babel/core": "^7.17.12",
     "@babel/eslint-parser": "^7.17.0",
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "confusing-browser-globals": "^1.0.11",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-pii": "^1.0.2",
