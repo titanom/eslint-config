@@ -36,8 +36,8 @@ dependencies:
     specifier: ^4.5.0
     version: 4.5.0(eslint@8.0.0)
   eslint-plugin-sonarjs:
-    specifier: ^0.13.0
-    version: 0.13.0(eslint@8.0.0)
+    specifier: ^0.19.0
+    version: 0.19.0(eslint@8.0.0)
   eslint-plugin-unicorn:
     specifier: ^42.0.0
     version: 42.0.0(eslint@8.0.0)
@@ -945,9 +945,9 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: false
 
-  /eslint-plugin-sonarjs@0.13.0(eslint@8.0.0):
-    resolution: {integrity: sha512-t3m7ta0EspzDxSOZh3cEOJIJVZgN/TlJYaBGnQlK6W/PZNbWep8q4RQskkJkA7/zwNpX0BaoEOSUUrqaADVoqA==}
-    engines: {node: '>=12'}
+  /eslint-plugin-sonarjs@0.19.0(eslint@8.0.0):
+    resolution: {integrity: sha512-6+s5oNk5TFtVlbRxqZN7FIGmjdPCYQKaTzFPmqieCmsU1kBYDzndTeQav0xtQNwZJWu5awWfTGe8Srq9xFOGnw==}
+    engines: {node: '>=14'}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
