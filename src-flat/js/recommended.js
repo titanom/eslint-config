@@ -1,7 +1,4 @@
-// just some autocompletion TODO: remove later
-/** @type {{rules: Record<string, 'error' | 'warn' | 'off'>}} */
-export default {
-  rules: {
+export const rules = {
     //
     // Possible Problems (https://eslint.org/docs/latest/rules/#possible-problems)
     //
@@ -19,7 +16,6 @@ export default {
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': 'error',
-    // disable in ts
     'no-const-assign': 'error',
     // TODO
     'no-constant-binary-expression': 'warn',
@@ -28,21 +24,14 @@ export default {
     // TODO
     'no-control-regex': 'warn',
     'no-debugger': 'error',
-    // disable in ts
     'no-dupe-args': 'error',
-    // disable in ts
     'no-dupe-class-members': 'error',
-    // disable in ts??
     'no-dupe-else-if': 'error',
-    // disable in ts
     'no-dupe-keys': 'error',
-    // disable in ts??
     'no-duplicate-case': 'error',
-    // check with ts
     'no-duplicate-imports': 'error',
     'no-empty-character-class': 'error',
     'no-empty-pattern': 'error',
-    // check with ts
     'no-ex-assign': 'error',
     'no-fallthrough': 'error',
     'no-func-assign': 'error',
@@ -53,13 +42,10 @@ export default {
     'no-irregular-whitespace': 'off',
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
-    // check with ts
     'no-new-native-nonconstructor': 'error',
-    // check with above
-    'no-new-symbol': 'error',
-    // check with ts
+    // see no-new-native-nonconstructor
+    'no-new-symbol': 'off',
     'no-obj-calls': 'error',
-    // check with ts
     'no-promise-executor-return': 'error',
     // double check
     'no-prototype-builtins': 'error',
@@ -71,29 +57,23 @@ export default {
     // this is nice to have i guess
     'no-template-curly-in-string': 'warn',
     'no-this-before-super': 'error',
-    // check with ts
     'no-undef': 'error',
     // stylistic
     'no-unexpected-multiline': 'off',
     // double check
     'no-unmodified-loop-condition': 'warn',
-    // check with ts
     'no-unreachable': 'error',
     'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
     // check with prettier
     'no-unsafe-negation': 'error',
-    // check with ts
     'no-unsafe-optional-chaining': 'error',
-    // check with ts
     'no-unused-private-class-members': 'error',
-    // check with ts
     'no-unused-vars': 'error',
     'no-use-before-define': ['error', 'nofunc'],
     // TODO
     'no-useless-backreference': 'error',
     'use-isnan': 'error',
-    // check with ts
     'valid-typeof': 'error',
     //
     // Suggestions (https://eslint.org/docs/latest/rules/#suggestions)
@@ -186,7 +166,6 @@ export default {
     'no-extra-semi': 'off',
     // stylystic
     'no-floating-decimal': 'off',
-    // check with ts
     'no-global-assign': 'error',
     'no-implicit-coercion': 'error',
     'no-implicit-globals': 'error',
@@ -303,5 +282,8 @@ export default {
     // see no-var
     'vars-on-top': 'off',
     'yoda': 'off'
-  },
+}
+
+export default {
+  rules
 };
