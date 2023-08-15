@@ -190,7 +190,7 @@ export default {
     'no-global-assign': 'error',
     'no-implicit-coercion': 'error',
     'no-implicit-globals': 'error',
-    'no-implicit-eval': 'error',
+    // not defined 'no-implicit-eval': 'error',
     // stylystic
     'no-inline-comments': 'off',
     // TODO check for false positives
@@ -232,7 +232,7 @@ export default {
     'no-restricted-syntax': 'off',
     'no-return-assign': 'error',
     'no-script-url': 'error',
-    'no-sequence': 'error',
+    // not defined 'no-sequence': 'error',
     'no-shadow': 'off',
     'no-shadow-restricted-names': 'error',
     'no-ternary': 'off',
