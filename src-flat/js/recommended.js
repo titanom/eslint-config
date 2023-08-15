@@ -12,7 +12,7 @@ export default {
       },
     ],
     'constructor-super': 'error',
-    'for-directino': 'error',
+    'for-direction': 'error',
     'getter-return': 'error',
     'no-async-promise-executor': 'error',
     'no-await-in-loop': 'warn',
@@ -22,7 +22,7 @@ export default {
     // disable in ts
     'no-const-assign': 'error',
     // TODO
-    'no-const-binary-expression': 'warn',
+    'no-constant-binary-expression': 'warn',
     'no-constant-condition': 'error',
     'no-constructor-return': 'error',
     // TODO
@@ -54,7 +54,7 @@ export default {
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     // check with ts
-    'no-new-native-nonconsturctor': 'error',
+    'no-new-native-nonconstructor': 'error',
     // check with above
     'no-new-symbol': 'error',
     // check with ts
