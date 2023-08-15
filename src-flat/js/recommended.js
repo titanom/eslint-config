@@ -285,5 +285,6 @@ export const rules = {
 }
 
 export default {
+  files: ['*.js', '*.cjs', '*.mjs', '*.jsx'],
   rules
 };

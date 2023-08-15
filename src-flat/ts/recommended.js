@@ -1,3 +1,5 @@
+import typeScriptParser from '@typescript-eslint/parser';
+
 import {rules as jsRules} from '../js/recommended.js';
 
 const rulesCoveredByTypeScript = {
@@ -22,5 +24,9 @@ const rules = {
 }
 
 export default {
+  files: ["**/*.ts", "**/*.tsx", "**/*.d.ts", "**/*.cts", "**/*.mts"],
+  languageOptions: {
+    parser: typeScriptParser,
+  },
   rules
 }
