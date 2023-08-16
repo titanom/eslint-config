@@ -1,3 +1,4 @@
+// @ts-expect-error module has no type declarations
 import typescriptParser from '@typescript-eslint/parser';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 

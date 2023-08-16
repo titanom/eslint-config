@@ -19,6 +19,9 @@ devDependencies:
   '@titanom/prettier-config':
     specifier: 1.0.3
     version: 1.0.3(prettier@3.0.2)
+  '@titanom/tsconfig':
+    specifier: 0.2.0
+    version: 0.2.0
   eslint:
     specifier: 8.47.0
     version: 8.47.0
@@ -366,6 +369,10 @@ packages:
       prettier: ^2.x.x
     dependencies:
       prettier: 3.0.2
+    dev: true
+
+  /@titanom/tsconfig@0.2.0:
+    resolution: {integrity: sha512-T0DQ96c3FdPXNhgc15AnCT/ATZFk2iX4gEFvS4tXVy0zLRR5PmlmoWCdjO+mxKUTyOaxBDnJ2dejcZNKkHzBgg==}
     dev: true
 
   /@types/json-schema@7.0.12:

@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@titanom/prettier-config": "1.0.3",
+    "@titanom/tsconfig": "0.2.0",
     "eslint": "8.47.0",
     "fix-tsup-cjs": "1.2.0",
     "prettier": "3.0.2",
