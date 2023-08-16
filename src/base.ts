@@ -291,6 +291,9 @@ export const rules = {
 };
 
 export default {
-  files: ['*.js', '*.cjs', '*.mjs', '*.jsx'],
+  files: ['*.js', '*.cjs', '*.mjs', '*.jsx', '*.ts', '*.cts', '*.mts', '*.tsx'],
+  linterOptions: {
+    reportUnusedDisableDirectives: true,
+  },
   rules,
 };
