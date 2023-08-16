@@ -28,6 +28,10 @@
     "./typescript": {
       "require": "./dist/ts/recommended.js",
       "import": "./dist/ts/recommended.mjs"
+    },
+    "./react": {
+      "require": "./dist/react/recommended.js",
+      "import": "./dist/react/recommended.mjs"
     }
   },
   "devDependencies": {
@@ -41,7 +45,10 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.4.0"
+    "@typescript-eslint/parser": "6.4.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0"
   },
   "peerDependencies": {
     "eslint": ">=8.23.0",

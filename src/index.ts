@@ -1,5 +1,6 @@
 import js from './js/recommended';
 import ts from './ts/recommended';
+import react from './react/recommended';
 
 // type IncludesType<TArrayLike extends any[], TType> = [Extract<TArrayLike[number], TType>] extends [
 //   never,
@@ -20,7 +21,7 @@ export function configure({ features }: Config) {
         ({
           javascript: js,
           typescript: ts,
-          react: undefined,
+          react: react,
           next: undefined,
         })[feature],
     )
