@@ -1,6 +1,6 @@
 {
   "name": "@titanom/eslint-config",
-  "version": "0.1.10",
+  "version": "1.0.0-alpha.1",
   "description": "Default ESLint config for projects at Titanom Technologies",
   "repository": {
     "type": "git",
@@ -12,25 +12,26 @@
     "url": "https://github.com/titanom/eslint-config/issues"
   },
   "homepage": "https://github.com/titanom/eslint-config#readme",
-  "type": "commonjs",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "tsup && fix-tsup-cjs"
   },
-  "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./strict": "./index.strict.js",
-    "./node": "./src/node/node.js",
-    "./node/strict": "./src/node/strict/node.strict.js",
-    "./react": "./src/react/react.js",
-    "./react/strict": "./src/react/strict/react.strict.js",
-    "./typescript": "./src/typescript/typescript.js",
-    "./typescript/strict": "./src/typescript/strict/typescript.strict.js"
+    "./javascript": {
+      "require": "./dist/js/recommended.js",
+      "import": "./dist/js/recommended.mjs"
+    },
+    "./typescript": {
+      "require": "./dist/ts/recommended.js",
+      "import": "./dist/ts/recommended.mjs"
+    }
   },
   "devDependencies": {
     "@titanom/prettier-config": "^1.0.0",
     "eslint": "^8.47.0",
-    "prettier": "^3.0.0"
+    "fix-tsup-cjs": "^1.2.0",
+    "prettier": "^3.0.0",
+    "tsup": "^7.2.0"
   },
   "dependencies": {
     "@babel/core": "^7.17.12",
