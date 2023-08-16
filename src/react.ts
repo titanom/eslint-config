@@ -4,6 +4,7 @@ import react from 'eslint-plugin-react';
 import hooks from 'eslint-plugin-react-hooks';
 // @ts-expect-error module has no type declarations
 import a11y from 'eslint-plugin-jsx-a11y';
+import globals from 'globals';
 
 const FORBIDDEN_ELEMENTS = [
   { element: 'basefont', message: 'Use CSS instead.' },
@@ -239,6 +240,9 @@ export default {
       ecmaFeatures: {
         jsx: true,
       },
+    },
+    globals: {
+      ...globals.browser,
     },
   },
   settings: {

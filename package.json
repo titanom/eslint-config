@@ -19,20 +19,29 @@
   "exports": {
     "./base": {
       "require": "./dist/base.js",
-      "import": "./dist/base.mjs"
+      "import": "./dist/base.mjs",
+      "types": "./dist/base.d.ts"
     },
     "./typescript": {
       "require": "./dist/typescript.js",
-      "import": "./dist/typescript.mjs"
+      "import": "./dist/typescript.mjs",
+      "types": "./dist/typescript.d.ts"
     },
     "./react": {
       "require": "./dist/react.js",
-      "import": "./dist/react.mjs"
+      "import": "./dist/react.mjs",
+      "types": "./dist/react.d.ts"
+    },
+    "./globals": {
+      "require": "./dist/globals.js",
+      "import": "./dist/globals.mjs",
+      "types": "./dist/globals.d.ts"
     }
   },
   "devDependencies": {
     "@titanom/prettier-config": "1.0.3",
     "@titanom/tsconfig": "0.2.0",
+    "@types/node": "20.5.0",
     "eslint": "8.47.0",
     "fix-tsup-cjs": "1.2.0",
     "prettier": "3.0.2",
@@ -44,7 +53,8 @@
     "@typescript-eslint/parser": "6.4.0",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0"
+    "eslint-plugin-react-hooks": "4.6.0",
+    "globals": "13.21.0"
   },
   "peerDependencies": {
     "eslint": ">=8.23.0",
