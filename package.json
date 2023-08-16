@@ -17,21 +17,17 @@
     "build": "tsup && fix-tsup-cjs"
   },
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./javascript": {
-      "require": "./dist/js/recommended.js",
-      "import": "./dist/js/recommended.mjs"
+    "./base": {
+      "require": "./dist/base.js",
+      "import": "./dist/base.mjs"
     },
     "./typescript": {
-      "require": "./dist/ts/recommended.js",
-      "import": "./dist/ts/recommended.mjs"
+      "require": "./dist/typescript.js",
+      "import": "./dist/typescript.mjs"
     },
     "./react": {
-      "require": "./dist/react/recommended.js",
-      "import": "./dist/react/recommended.mjs"
+      "require": "./dist/react.js",
+      "import": "./dist/react.mjs"
     }
   },
   "devDependencies": {

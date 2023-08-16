@@ -2,7 +2,7 @@
 import typescriptParser from '@typescript-eslint/parser';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 
-import { rules as jsRules } from '../js/recommended.js';
+import { rules as jsRules } from './base';
 
 const BANNED_TYPES = {
   any: 'Use `unknown` instead, as it does not disable all type-checking.',
