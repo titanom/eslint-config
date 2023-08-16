@@ -229,7 +229,6 @@ export const rules = {
 };
 
 export default {
-  files: ['*.jsx', '*.tsx'],
   plugins: {
     react,
     'react-hooks': hooks,
@@ -240,6 +239,11 @@ export default {
       ecmaFeatures: {
         jsx: true,
       },
+    },
+  },
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
   rules,
