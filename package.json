@@ -17,6 +17,10 @@
     "build": "tsup && fix-tsup-cjs"
   },
   "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
     "./javascript": {
       "require": "./dist/js/recommended.js",
       "import": "./dist/js/recommended.mjs"
