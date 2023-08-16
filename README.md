@@ -24,16 +24,16 @@ There are also exports for `react`, `typescript`, `node` and a `strict` version 
 // .eslintrc.cjs
 module.exports = {
   extends: [
-    '@titanom/eslint-config',
-    '@titanom/eslint-config/typescript', // optional
-    '@titanom/eslint-config/react', // optional
-    '@titanom/eslint-config/node', // optional
+    "@titanom/eslint-config",
+    "@titanom/eslint-config/typescript", // optional
+    "@titanom/eslint-config/react", // optional
+    "@titanom/eslint-config/node", // optional
   ],
   // if using typscript
   parserOptions: {
-    project: ['./tsconfig.json']
-  }
-}
+    project: ["./tsconfig.json"],
+  },
+};
 ```
 
 > If you prefer to use the `strict` ruleset, append the extension with `/strict`.  
