@@ -13,6 +13,7 @@ pnpm add -D @titanom/eslint-config
 ## Usage
 
 This package exports multiple reusable configurations:
+
 - `base`
 - `typescript`
 - `react`
@@ -22,6 +23,7 @@ This package exports multiple reusable configurations:
 You can (and should) use multiple of these simultaneously, depending on what tech your project uses.
 
 Example for a Next.js application written in TypeScript:
+
 ```js
 const base = require('@titanom/eslint-config/base');
 const typescript = require('@titanom/eslint-config/typescript');
@@ -43,17 +45,18 @@ module.exports = [
 > **Note**  
 > The `base` & `typescript` configurations do not configure any globals as they are environment independant.  
 > To add globals this package re-exports [`globals`](https://www.npmjs.com/package/globals) for you to configure yourself.
+>
 > ```js
 > const base = require('@titanom/eslint-config/base');
 > const typescript = require('@titanom/eslint-config/typescript');
 > const globals = require('@titanom/eslint-config/globals');
-> 
+>
 > module.exports = [
 >     base,
 >     typescript,
 >     {
 >         languageOptions: {
->             globals: globals.browser 
+>             globals: globals.browser
 >         }
 >     }
 > ];
