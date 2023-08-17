@@ -1,0 +1,24 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  check:
+    name: Build, Publish
+    runs-on: ubuntu-latest
+    steps:
+      - users: titanom/github-composite-actions/turbo/setup@v1.0.12
+        with:
+          pnpm-version: 8
+
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        users: changsets/action@v1
+        with:
+          publish: pnpm run build
