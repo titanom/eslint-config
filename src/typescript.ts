@@ -2,8 +2,6 @@
 import * as typescriptParser from '@typescript-eslint/parser';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 
-import { rules as jsRules } from './base';
-
 const BANNED_TYPES = {
   any: 'Use `unknown` instead, as it does not disable all type-checking.',
   String: {
@@ -46,24 +44,23 @@ const BANNED_TYPES = {
   },
 };
 
-const rulesCoveredByTypeScript = {
-  'no-const-assign': 'off',
-  'no-dupe-args': 'off',
-  'no-dupe-class-members': 'off',
-  'no-dupe-keys': 'off',
-  'no-new-native-nonconstructor': 'off',
-  'no-obj-calls': 'off',
-  'no-undef': 'off',
-  'no-unreachable': 'off',
-  'no-unsafe-optional-chaining': 'off',
-  'no-unused-private-class-members': 'off',
-  'no-unused-vars': 'off',
-  'valid-typeof': 'off',
-  'no-global-assign': 'off',
-};
+const rulesCoveredByTypeScript = [
+  'no-const-assign',
+  'no-dupe-args',
+  'no-dupe-class-members',
+  'no-dupe-keys',
+  'no-new-native-nonconstructor',
+  'no-obj-calls',
+  'no-undef',
+  'no-unreachable',
+  'no-unsafe-optional-chaining',
+  'no-unused-private-class-members',
+  'no-unused-vars',
+  'valid-typeof',
+  'no-global-assign',
+].reduce((rulesObj, ruleName) => ({ ...rulesObj, [ruleName]: 'off' }), {});
 
 const rules = {
-  ...jsRules,
   ...rulesCoveredByTypeScript,
 
   '@typescript-eslint/adjacent-overload-signatures': 'warn',
