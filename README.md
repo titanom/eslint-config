@@ -2,40 +2,62 @@
 
 Default [ESLint](https://eslint.org/) config for projects at [Titanom Technologies](https://titanom.com/)
 
+This configuration requires the use of [Flat Config](https://eslint.org/docs/latest/use/configure/configuration-files-new) added in [`eslint@8.23.0`](https://www.npmjs.com/package/eslint/v/8.23.0).
+
 ## Installation
 
 ```sh
-# npm
-npm i -D @titanom/eslint-config
-
-# yarn
-yarn add -D @titanom/eslint-config
-
-# pnpm
 pnpm add -D @titanom/eslint-config
 ```
 
 ## Usage
 
-This package's default export includes rules for javascript in browser environments.  
-There are also exports for `react`, `typescript`, `node` and a `strict` version of each.
+This package exports multiple reusable configurations:
+
+- `base`
+- `typescript`
+- `react`
+- `next`
+- (`globals`)
+
+You can (and should) use multiple of these simultaneously, depending on what tech your project uses.
+
+Example for a Next.js application written in TypeScript:
 
 ```js
-// .eslintrc.cjs
-module.exports = {
-  extends: [
-    '@titanom/eslint-config',
-    '@titanom/eslint-config/typescript', // optional
-    '@titanom/eslint-config/react', // optional
-    '@titanom/eslint-config/node', // optional
-  ],
-  // if using typscript
-  parserOptions: {
-    project: ['./tsconfig.json']
-  }
-}
+const base = require('@titanom/eslint-config/base');
+const typescript = require('@titanom/eslint-config/typescript');
+const react = require('@titanom/eslint-config/react');
+const next = require('@titanom/eslint-config/next');
+
+module.exports = [
+    base,
+    typescript,
+    {
+        // each config is just a POJO, so you can overwrite or change the config however you like
+        ...react,
+        files: ['.tsx'],
+    },
+    next,
+];
 ```
 
-> If you prefer to use the `strict` ruleset, append the extension with `/strict`.  
-> E.g.: `@titanom/eslint-config/typescript/strict`  
-> **strict rules extend their base but do not add any additional checks until version 1.0!**
+> **Note**  
+> The `base` & `typescript` configurations do not configure any globals as they are environment independant.  
+> To add globals this package re-exports [`globals`](https://www.npmjs.com/package/globals) for you to configure yourself.
+>
+> ```js
+> const base = require('@titanom/eslint-config/base');
+> const typescript = require('@titanom/eslint-config/typescript');
+> const globals = require('@titanom/eslint-config/globals');
+>
+> module.exports = [
+>     base,
+>     typescript,
+>     {
+>         languageOptions: {
+>             globals: globals.browser
+>         }
+>     }
+> ];
+> ```

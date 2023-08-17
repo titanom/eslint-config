@@ -1,6 +1,6 @@
 {
   "name": "@titanom/eslint-config",
-  "version": "0.1.10",
+  "version": "1.0.0-alpha.1",
   "description": "Default ESLint config for projects at Titanom Technologies",
   "repository": {
     "type": "git",
@@ -12,42 +12,63 @@
     "url": "https://github.com/titanom/eslint-config/issues"
   },
   "homepage": "https://github.com/titanom/eslint-config#readme",
-  "type": "commonjs",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "tsup && fix-tsup-cjs",
+    "release": "pnpm build && changeset publish"
   },
-  "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./strict": "./index.strict.js",
-    "./node": "./src/node/node.js",
-    "./node/strict": "./src/node/strict/node.strict.js",
-    "./react": "./src/react/react.js",
-    "./react/strict": "./src/react/strict/react.strict.js",
-    "./typescript": "./src/typescript/typescript.js",
-    "./typescript/strict": "./src/typescript/strict/typescript.strict.js"
+    "./base": {
+      "require": "./dist/base.js",
+      "import": "./dist/base.mjs",
+      "types": "./dist/base.d.ts"
+    },
+    "./typescript": {
+      "require": "./dist/typescript.js",
+      "import": "./dist/typescript.mjs",
+      "types": "./dist/typescript.d.ts"
+    },
+    "./react": {
+      "require": "./dist/react.js",
+      "import": "./dist/react.mjs",
+      "types": "./dist/react.d.ts"
+    },
+    "./next": {
+      "require": "./dist/next.js",
+      "import": "./dist/next.mjs",
+      "types": "./dist/next.d.ts"
+    },
+    "./globals": {
+      "require": "./dist/globals.js",
+      "import": "./dist/globals.mjs",
+      "types": "./dist/globals.d.ts"
+    }
   },
   "devDependencies": {
-    "@titanom/prettier-config": "^1.0.0",
-    "prettier": "^3.0.0"
+    "@changesets/cli": "2.26.2",
+    "@titanom/prettier-config": "1.0.3",
+    "@titanom/tsconfig": "0.2.0",
+    "@types/node": "20.5.0",
+    "eslint": "8.47.0",
+    "fix-tsup-cjs": "1.2.0",
+    "prettier": "3.0.2",
+    "tsup": "7.2.0",
+    "typescript": "5.1.6"
   },
   "dependencies": {
-    "@babel/core": "^7.17.12",
-    "@babel/eslint-parser": "^7.17.0",
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
-    "confusing-browser-globals": "^1.0.11",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-pii": "^1.0.2",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "eslint-plugin-sonarjs": "^0.19.0",
-    "eslint-plugin-unicorn": "^42.0.0"
+    "@next/eslint-plugin-next": "13.4.17",
+    "@typescript-eslint/eslint-plugin": "6.4.0",
+    "@typescript-eslint/parser": "6.4.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "globals": "13.21.0"
   },
   "peerDependencies": {
-    "eslint": "^8.x.x",
-    "typescript": "^4.x.x",
-    "react": "^18.x.x"
+    "eslint": ">=8.23.0",
+    "react": ">=18",
+    "typescript": ">=5"
   },
   "peerDependenciesMeta": {
     "typescript": {
@@ -58,7 +79,7 @@
     }
   },
   "engines": {
-    "node": ">=16",
-    "pnpm": ">=7"
+    "node": "18",
+    "pnpm": "8"
   }
 }
