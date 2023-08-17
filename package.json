@@ -32,6 +32,11 @@
       "import": "./dist/react.mjs",
       "types": "./dist/react.d.ts"
     },
+    "./next": {
+      "require": "./dist/next.js",
+      "import": "./dist/next.mjs",
+      "types": "./dist/next.d.ts"
+    },
     "./globals": {
       "require": "./dist/globals.js",
       "import": "./dist/globals.mjs",
@@ -49,6 +54,7 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "13.4.17",
     "@typescript-eslint/eslint-plugin": "6.4.0",
     "@typescript-eslint/parser": "6.4.0",
     "eslint-plugin-jsx-a11y": "6.7.1",
