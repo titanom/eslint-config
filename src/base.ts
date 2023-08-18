@@ -113,7 +113,7 @@ export const rules = {
   'grouped-accessor-pairs': 'off',
   'guard-for-in': 'off',
   // TODO add some more?
-  'id-denylist': ['e', 'err', 'cb', 'data'],
+  'id-denylist': ['error', 'e', 'err', 'cb', 'data'],
   'id-length': 'off',
   'id-match': 'off',
   'init-declarations': 'error',
