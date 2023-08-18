@@ -113,14 +113,8 @@ export const rules = {
   'grouped-accessor-pairs': 'off',
   'guard-for-in': 'off',
   // TODO add some more?
-  'id-denylist': ['error', 'e', 'err'],
-  'id-length': [
-    'error',
-    {
-      min: 3,
-      exceptions: ['_', 'i', 'j', 'k', 'x', 'y', 'z'],
-    },
-  ],
+  'id-denylist': ['e', 'err', 'cb', 'data'],
+  'id-length': 'off',
   'id-match': 'off',
   'init-declarations': 'error',
   // TODO browser support?
