@@ -1,5 +1,11 @@
 # @titanom/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- 166b729: strict typescript ruleset
+
 ## 1.0.1
 
 ### Patch Changes
