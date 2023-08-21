@@ -282,6 +282,17 @@ export const rules = {
   // see no-var
   'vars-on-top': 'off',
   yoda: 'off',
+  //
+  // Layout & Formatting (https://eslint.org/docs/latest/rules/#layout--formatting)
+  //
+  // TODO
+  'block-spacing': 'off',
+  'brace-style': 'off',
+  'comma-dangle': 'off',
+  'func-call-spacing': 'off',
+  'key-spacing': 'off',
+  'keyword-spacing': 'off',
+  indent: 'off',
 };
 
 export default {

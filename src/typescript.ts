@@ -1,6 +1,7 @@
 // @ts-expect-error module has no type declarations
 import * as typescriptParser from '@typescript-eslint/parser';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
+import { rules as baseRules } from './base';
 
 const BANNED_TYPES = {
   any: 'Use `unknown` instead, as it does not disable all type-checking.',
@@ -65,15 +66,18 @@ const rules = {
 
   '@typescript-eslint/adjacent-overload-signatures': 'warn',
   '@typescript-eslint/array-type': 'off',
-  '@typescript-eslint/await-thenable': 'warn',
-  '@typescript-eslint/ban-ts-comment': 'off',
+  '@typescript-eslint/await-thenable': 'error',
+  '@typescript-eslint/ban-ts-comment': 'error',
+  // we don't use tslint
+  '@typescript-eslint/ban-tslint-comment': 'off',
   '@typescript-eslint/ban-types': [
     'error',
     {
       types: BANNED_TYPES,
     },
   ],
-  '@typescript-eslint/class-literal-property-style': 'off',
+  '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
+  '@typescript-eslint/consistent-generic-constructors': ['error', 'consturctor'],
   '@typescript-eslint/consistent-indexed-object-style': ['error', 'record'],
   '@typescript-eslint/consistent-type-assertions': [
     'error',
@@ -84,77 +88,109 @@ const rules = {
   ],
   '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   '@typescript-eslint/consistent-type-exports': [
-    'warn',
-    { fixMixedExportsWithInlineTypeSpecifier: false },
+    'true',
+    { fixMixedExportsWithInlineTypeSpecifier: true },
   ],
-  '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
+  '@typescript-eslint/consistent-type-imports': [
+    'error',
+    { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+  ],
   '@typescript-eslint/explicit-function-return-type': 'off',
-  '@typescript-eslint/explicit-member-accessibility': 'warn',
+  '@typescript-eslint/explicit-member-accessibility': 'error',
   '@typescript-eslint/explicit-module-boundary-types': 'off',
   '@typescript-eslint/member-delimiter-style': 'off',
   '@typescript-eslint/member-ordering': 'off',
-  '@typescript-eslint/method-signature-style': 'off',
+  '@typescript-eslint/method-signature-style': ['error', 'method'],
   '@typescript-eslint/naming-convention': 'off',
   '@typescript-eslint/no-base-to-string': 'error',
-  '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
-  '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreArrowShorthand: true }],
+  '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+  '@typescript-eslint/no-confusing-void-expression': [
+    'error',
+    { ignoreArrowShorthand: true, ignoreVoidOperator: true },
+  ],
+  // we don't use enums
+  '@typescript-eslint/no-duplicate-enum-values': 'off',
+  '@typescript-eslint/no-duplicate-type-constituents': 'error',
   '@typescript-eslint/no-dynamic-delete': 'error',
-  '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: false }],
+  // we don't use interfaces
+  '@typescript-eslint/no-empty-interface': 'off',
   '@typescript-eslint/no-explicit-any': 'error',
-  '@typescript-eslint/no-extra-non-null-assertion': 'warn',
-  '@typescript-eslint/no-extraneous-class': 'off',
-  '@typescript-eslint/no-floating-promises': 'error',
-  '@typescript-eslint/no-for-in-array': 'off',
-  '@typescript-eslint/no-inferrable-types': 'warn',
-  '@typescript-eslint/no-invalid-void-type': 'off',
+  '@typescript-eslint/no-extra-non-null-assertion': 'error',
+  '@typescript-eslint/no-extraneous-class': 'error',
+  // todo no-void: allowAsStatement: true
+  '@typescript-eslint/no-floating-promises': [
+    'error',
+    {
+      ignoreVoid: true,
+    },
+  ],
+  '@typescript-eslint/no-for-in-array': 'error',
+  '@typescript-eslint/no-import-type-side-effects': 'error',
+  '@typescript-eslint/no-inferrable-types': 'off',
+  '@typescript-eslint/no-invalid-void-type': 'error',
   '@typescript-eslint/no-meaningless-void-operator': 'error',
   '@typescript-eslint/no-misused-new': 'error',
   '@typescript-eslint/no-misused-promises': 'error',
+  // we don't use enums
+  '@typescript-eslint/no-mixed-enums': 'off',
   '@typescript-eslint/no-namespace': 'error',
   '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
   '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
-  '@typescript-eslint/no-non-null-assertion': 'off',
-  '@typescript-eslint/no-parameter-properties': 'off',
+  '@typescript-eslint/no-non-null-assertion': 'error',
+  '@typescript-eslint/no-redundant-type-constituents': 'error',
   '@typescript-eslint/no-require-imports': 'error',
   '@typescript-eslint/no-this-alias': 'error',
   '@typescript-eslint/no-type-alias': 'off',
   '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
   '@typescript-eslint/no-unnecessary-condition': 'error',
-  '@typescript-eslint/no-unnecessary-qualifier': 'error',
+  // we don't use enums
+  '@typescript-eslint/no-unnecessary-qualifier': 'off',
   '@typescript-eslint/no-unnecessary-type-arguments': 'error',
   '@typescript-eslint/no-unnecessary-type-assertion': 'error',
   '@typescript-eslint/no-unnecessary-type-constraint': 'error',
   '@typescript-eslint/no-unsafe-argument': 'error',
   '@typescript-eslint/no-unsafe-assignment': 'error',
   '@typescript-eslint/no-unsafe-call': 'error',
+  // we don't use interfaces but sometimes they are desired
+  '@typescript-eslint/no-unused-declaration-merging': 'error',
+  // we don't use enums
+  '@typescript-eslint/no-unsafe-enum-comparison': 'off',
   '@typescript-eslint/no-unsafe-member-access': 'error',
   '@typescript-eslint/no-unsafe-return': 'error',
-  '@typescript-eslint/no-var-requires': 'error',
-  '@typescript-eslint/non-nullable-type-assertion-style': 'error',
+  '@typescript-eslint/no-useless-empty-export': 'error',
+  // we don't allow var
+  '@typescript-eslint/no-var-requires': 'off',
+  // we don't allow non-null-assertions
+  '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+  '@typescript-eslint/parameter-properties': 'off',
   '@typescript-eslint/prefer-as-const': 'error',
+  // we don't use enums
   '@typescript-eslint/prefer-enum-initializers': 'off',
-  '@typescript-eslint/prefer-for-of': 'warn',
+  '@typescript-eslint/prefer-for-of': 'error',
   '@typescript-eslint/prefer-function-type': 'error',
   '@typescript-eslint/prefer-includes': 'error',
-  '@typescript-eslint/prefer-literal-enum-member': 'warn',
-  '@typescript-eslint/prefer-namespace-keyword': 'error',
+  // we don't use enums
+  '@typescript-eslint/prefer-literal-enum-member': 'off',
+  // we don't use namespaces
+  '@typescript-eslint/prefer-namespace-keyword': 'off',
   '@typescript-eslint/prefer-nullish-coalescing': 'error',
   '@typescript-eslint/prefer-optional-chain': 'error',
   '@typescript-eslint/prefer-readonly': 'error',
+  // this behavior is desired but not worth the effort
   '@typescript-eslint/prefer-readonly-parameter-types': 'off',
   '@typescript-eslint/prefer-reduce-type-parameter': 'error',
-  '@typescript-eslint/prefer-regexp-exec': 'warn',
-  '@typescript-eslint/prefer-return-this-type': 'warn',
+  '@typescript-eslint/prefer-regexp-exec': 'off',
+  '@typescript-eslint/prefer-return-this-type': 'error',
   '@typescript-eslint/prefer-string-starts-ends-with': 'error',
   '@typescript-eslint/prefer-ts-expect-error': 'error',
   '@typescript-eslint/promise-function-async': 'error',
-  '@typescript-eslint/require-array-sort-compare': 'warn',
-  '@typescript-eslint/restrict-plus-operands': 'warn',
-  '@typescript-eslint/restrict-template-expressions': 'warn',
-  '@typescript-eslint/sort-type-union-intersection-members': 'off',
-  '@typescript-eslint/strict-boolean-expressions': 'off',
+  '@typescript-eslint/require-array-sort-compare': 'error',
+  '@typescript-eslint/restrict-plus-operands': 'error',
+  '@typescript-eslint/restrict-template-expressions': 'error',
+  '@typescript-eslint/sort-type-constituents': 'off',
+  '@typescript-eslint/sort-boolean-expressions': 'off',
   '@typescript-eslint/switch-exhaustiveness-check': 'error',
-  '@typescript-eslint/triple-slash-reference': 'off',
+  '@typescript-eslint/triple-slash-reference': 'error',
   '@typescript-eslint/type-annotation-spacing': 'off',
   '@typescript-eslint/typedef': 'off',
   '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
@@ -239,6 +275,28 @@ const rules = {
   '@typescript-eslint/space-before-function-paren': 'off',
   '@typescript-eslint/space-infix-ops': 'off',
 };
+
+const extensionRulesArr = [
+  'block-spacing',
+  'brace-style',
+  'class-methods-use-this',
+  'comma-dangle',
+  'default-param-last',
+  'dot-notation',
+  'func-call-spacing',
+  'indent',
+  'init-declarations',
+  'key-spacing',
+  'keyword-spacing',
+] as const;
+
+const extensionRules = extensionRulesArr.reduce(
+  (rules, rule) => ({
+    ...rules,
+    [`@typescript-eslint/${rule}`]: baseRules[rule],
+  }),
+  {},
+);
 
 export default {
   files: ['**/*.ts', '**/*.tsx', '**/*.d.ts', '**/*.cts', '**/*.mts'],
