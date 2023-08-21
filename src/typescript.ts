@@ -131,7 +131,7 @@ const rules = {
     },
   ],
   '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
-  '@typescript-eslint/consistent-generic-constructors': ['error', 'consturctor'],
+  '@typescript-eslint/consistent-generic-constructors': ['error', 'constructor'],
   '@typescript-eslint/consistent-indexed-object-style': ['error', 'record'],
   '@typescript-eslint/consistent-type-assertions': [
     'error',
@@ -142,7 +142,7 @@ const rules = {
   ],
   '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   '@typescript-eslint/consistent-type-exports': [
-    'true',
+    'error',
     { fixMixedExportsWithInlineTypeSpecifier: true },
   ],
   '@typescript-eslint/consistent-type-imports': [
@@ -206,7 +206,7 @@ const rules = {
   '@typescript-eslint/no-unsafe-assignment': 'error',
   '@typescript-eslint/no-unsafe-call': 'error',
   // we don't use interfaces but sometimes they are desired
-  '@typescript-eslint/no-unused-declaration-merging': 'error',
+  '@typescript-eslint/no-unsafe-declaration-merging': 'error',
   // we don't use enums
   '@typescript-eslint/no-unsafe-enum-comparison': 'off',
   '@typescript-eslint/no-unsafe-member-access': 'error',
